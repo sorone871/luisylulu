@@ -58,6 +58,7 @@ const GaleriaSlider: React.FC<GaleriaSliderProps> = ({ images }) => {
           onClick={() => setSelectedImage(null)}
         >
           <img
+
             src={selectedImage}
             alt="Imagen ampliada"
             className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-lg"
