@@ -3,6 +3,7 @@ import Countdown from '@/app/components/Countdown/Countdown';
 
 const Hero = () => {
     return (
+
         // Contenedor principal relativo que ocupa toda la pantalla (h-screen)
         <section className="relative w-full h-screen overflow-hidden">
 
@@ -27,7 +28,7 @@ const Hero = () => {
                     <p className="italic text-base md:text-lg mt-2 text-gray-200">
                         "Donde comienza nuestra historia eterna"
                     </p>
-                    
+
                     <div className="mt-8 md:mt-12 w-full">
                         <Countdown />
                     </div>
