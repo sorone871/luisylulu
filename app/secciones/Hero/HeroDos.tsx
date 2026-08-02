@@ -21,7 +21,7 @@ const HeroDos = () => {
             {/* ETIQUETA DE VIDEO NATIVA CON REF */}
             <video
                 ref={videoRef}
-                src="/videos/video-novios2.mp4"
+                src="/videos/video-novios.mp4"
                 autoPlay
                 loop
                 muted // Obligatorio al inicio; los navegadores bloquean el autoplay si el video tiene sonido
