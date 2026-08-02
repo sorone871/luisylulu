@@ -14,18 +14,18 @@ const GaleriaSlider: React.FC<GaleriaSliderProps> = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <div className="w-full h-[50vh] md:h-[70vh] lg:h-[80vh]">
+    <div className="w-full h-[50vh] md:h-[60vh] lg:h-[60vh]">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={10}
         slidesPerView={2}
         breakpoints={{
           640: {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 15,
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 20,
           },
         }}
@@ -33,7 +33,7 @@ const GaleriaSlider: React.FC<GaleriaSliderProps> = ({ images }) => {
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000 }}
         loop
-        className="w-full h-full pb-10" // Padding bottom for pagination bullets
+        className="w-full h-full " // Padding bottom for pagination bullets
       >
         {images.map((img, index) => (
           <SwiperSlide key={index} className="flex justify-center items-center h-full">
@@ -61,7 +61,7 @@ const GaleriaSlider: React.FC<GaleriaSliderProps> = ({ images }) => {
 
             src={selectedImage}
             alt="Imagen ampliada"
-            className="max-w-[90%] max-h-[90%] object-contain rounded-lg shadow-lg"
+            className="w-full h-[80vh]  object-cover rounded-lg shadow-lg"
           />
         </div>
       )}
