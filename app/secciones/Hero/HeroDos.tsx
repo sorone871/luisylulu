@@ -21,7 +21,7 @@ const HeroDos = () => {
             {/* ETIQUETA DE VIDEO NATIVA CON REF */}
             <video
                 ref={videoRef}
-                src="/videos/video-novios2.mp4"
+                src="https://axr4gkrgwa5g3rne.public.blob.vercel-storage.com/lulu-y-luis.mp4"
                 autoPlay
                 loop
                 muted // Obligatorio al inicio; los navegadores bloquean el autoplay si el video tiene sonido
@@ -34,7 +34,7 @@ const HeroDos = () => {
                 <div className="flex flex-col text-white justify-center items-center text-center px-4">
                     <p className="uppercase tracking-widest text-sm mb-2">Nos casamos</p>
                     <h1 className="text-white text-6xl md:text-[8rem] font-serif leading-none">
-                        Luis & Lulu
+                        Lulu & Luis
                     </h1>
                     <p className="text-xl mt-4 font-light">Octubre - 2026</p>
 

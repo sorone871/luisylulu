@@ -22,7 +22,7 @@ const Hero = () => {
                 <div className="flex flex-col text-white justify-center items-center text-center px-4 w-full">
                     <p className="uppercase tracking-widest text-xs md:text-sm mb-2">Nos casamos</p>
                     <h1 className="text-white text-7xl md:text-[8rem] font-serif leading-none mt-2">
-                        Luis & Lulu
+                        Lulu & Luis
                     </h1>
                     <p className="text-lg md:text-xl mt-4 md:mt-6 font-light">Octubre - 2026</p>
                     <p className="italic text-base md:text-lg mt-2 text-gray-200">
