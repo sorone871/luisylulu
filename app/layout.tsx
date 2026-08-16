@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lulu & Luis | ¡Nos Casamos!",
     description: "Acompáñanos a celebrar nuestra boda este 03 de Octubre de 2026.",
-    images: ["/og-image.jpg"],
+    images: ["/images/novios/novios-portada.jpeg"],
   },
 };
 
