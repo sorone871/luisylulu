@@ -84,7 +84,7 @@ const HeroDos = () => {
             </div>
 
             {/* 2. Capa de degradado cinematográfico con espaciado vertical ampliado para móvil */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/20 z-10 flex flex-col justify-between items-center px-6 pt-24 pb-16 md:pt-16 md:pb-12 text-white text-center">
+            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/10 z-10 flex flex-col justify-between items-center px-6 pt-24 pb-16 md:pt-16 md:pb-12 text-white text-center">
 
                 {/* Encabezado Superior */}
                 <div className="space-y-1 animate-fade-in">

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Galeria from '@/app/secciones/Galeria/Galeria';
 import ConfirmacionAsistencia from '@/app/secciones/Asistencia/ConfirmacionAsistencia';
+import Hospedaje from '@/app/components/Hospedaje/Hospedaje';
 
 
 // Nombre de la función cambiado a Canva
@@ -509,6 +510,8 @@ export default function Canva() {
 
                     {/* ================= Confirmacion Asistencia ================= */}
                     <ConfirmacionAsistencia />
+                    {/* ================= Hospedaje ================= */}
+                    <Hospedaje />
                     {/* ================= FOOTER ELEGANTE ================= */}
                     <div className="w-full flex justify-center px-4 md:px-10 mt-6 mb-8">
                         <div className="relative w-full max-w-2xl h-80 md:h-[400px] rounded-[2rem] overflow-hidden shadow-xl border-4 border-white group">
