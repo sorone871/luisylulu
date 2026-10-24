@@ -1,9 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
 import Galeria from '@/app/secciones/Galeria/Galeria';
-import ConfirmacionAsistencia from '@/app/secciones/Asistencia/ConfirmacionAsistencia';
-import Hospedaje from '@/app/components/Hospedaje/Hospedaje';
 
 
 // Nombre de la función cambiado a Canva
@@ -14,9 +11,6 @@ export default function Canva() {
     const FOTO_TRIPTICO_1 = "https://smimmireles.my.canva.site/tenemos-el-honor-de-invitarte-a-nuestra-boda/_assets/media/baa765748af37ca74131b27ab6e38a6a.jpg";
     const FOTO_TRIPTICO_2 = "https://smimmireles.my.canva.site/tenemos-el-honor-de-invitarte-a-nuestra-boda/_assets/media/a8bf7de49d719dc55837ee5211e28b12.jpg";
     const FOTO_TRIPTICO_3 = "https://smimmireles.my.canva.site/tenemos-el-honor-de-invitarte-a-nuestra-boda/_assets/media/f5002ba4484bcf1d0156b861795a9a81.jpg";
-    const FOTO_CIVIL = "https://smimmireles.my.canva.site/tenemos-el-honor-de-invitarte-a-nuestra-boda/_assets/media/94840bf4184829b718ed5a2145403ea7.jpg";
-    const FOTO_RECEPCION = "https://smimmireles.my.canva.site/tenemos-el-honor-de-invitarte-a-nuestra-boda/_assets/media/f5002ba4484bcf1d0156b861795a9a81.jpg";
-    const FOTO_RECEPCION2 = "https://smimmireles.my.canva.site/tenemos-el-honor-de-invitarte-a-nuestra-boda/_assets/media/a8bf7de49d719dc55837ee5211e28b12.jpg";
     const FOTO_MANOS = "/images/novios/novios-3.avif";
 
     // Marcos e ilustraciones
@@ -27,27 +21,6 @@ export default function Canva() {
 
     // Imagen de la máscara solicitada
     const MASCARA_URL = "https://tailwindcss.com/_next/static/media/mask.0n3_1y7tpw5g7.png";
-
-    // Lógica del contador regresivo (Sábado 3 de Octubre 2026)
-    const [timeLeft, setTimeLeft] = useState({ dias: 63, horas: 11, minutos: 10, segundos: 50 });
-
-    useEffect(() => {
-        const targetDate = new Date("2026-10-03T19:00:00").getTime();
-        const interval = setInterval(() => {
-            const now = new Date().getTime();
-            const difference = targetDate - now;
-
-            if (difference > 0) {
-                setTimeLeft({
-                    dias: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                    horas: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-                    minutos: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-                    segundos: Math.floor((difference % (1000 * 60)) / 1000),
-                });
-            }
-        }, 1000);
-        return () => clearInterval(interval);
-    }, []);
 
     return (
         <div className="min-h-screen font-sans flex flex-col items-center selection:bg-emerald-100 bg-[#eef1eb]">
@@ -197,7 +170,7 @@ export default function Canva() {
                     {/* ================= 5. TEXTO DE INVITACIÓN Y FECHA ================= */}
                     <section className="w-full px-6 md:px-10 text-center my-4 flex flex-col items-center">
                         <h3 className="font-sans-clean text-xs md:text-sm tracking-[0.2em] text-stone-800 font-medium max-w-xs md:max-w-sm leading-relaxed uppercase">
-                            TENEMOS EL HONOR DE INVITARTE A<br />NUESTRA BODA
+                            GRACIAS POR ACOMPAÑARNOS EN<br />NUESTRA BODA
                         </h3>
 
                         {/* Bloque Fecha */}
@@ -218,230 +191,13 @@ export default function Canva() {
                     </section>
 
 
-                    {/* ================= 6. CEREMONIA CIVIL ================= */}
-                    <section className="w-full px-4 md:px-10 my-2">
-                        <div className="relative papel-artesanal rounded-2xl p-5 md:p-7 text-center border border-[#d2dec3] shadow-sm flex flex-col items-center overflow-hidden">
-
-                            {/* Hojas decorativas */}
-                            <img src={HOJA_VERDE} alt="Deco" className="absolute -top-2 -left-2 w-12 opacity-60 rotate-45 pointer-events-none" />
-                            <img src={HOJA_VERDE} alt="Deco" className="absolute -bottom-2 -right-2 w-12 opacity-60 -rotate-135 pointer-events-none scale-x-[-1]" />
-
-                            {/* Ícono elegante: Anillos entrelazados */}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#a4b48c] mb-3 drop-shadow-sm relative z-10">
-                                <circle cx="9" cy="12" r="5" />
-                                <circle cx="15" cy="12" r="5" />
-                            </svg>
-
-                            <h4 className="font-sans-clean text-xs md:text-sm tracking-[0.2em] font-semibold text-[#1f3a1f] uppercase mb-1 relative z-10">
-                                CEREMONIA CIVIL
-                            </h4>
-
-                            <p className="font-sans-clean text-[11px] md:text-xs tracking-wider text-[#2d402b] uppercase font-medium my-1 relative z-10">
-                                JARDIN LA PALAPA<br />
-                                HACIENDA LOS ANGELES
-                            </p>
-
-                            <span className="font-sans-clean text-xs md:text-sm font-semibold text-[#1f3a1f] my-2 block relative z-10">
-                                7:00 P.M
-                            </span>
-
-                            <a
-                                href="https://maps.app.goo.gl/Ksday6c6RRKWkCKJ9"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-3 inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#3d6335] text-[#3d6335] font-sans-clean text-xs tracking-widest uppercase font-semibold transition-all duration-300 hover:bg-[#3d6335] hover:text-white hover:shadow-md relative z-10"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                                Ver Ubicación
-                            </a>
+                    {/* ================= 6. AGRADECIMIENTO ================= */}
+                    <section className="w-full px-6 md:px-10 mt-4 flex flex-col items-center text-center">
+                        <div className="w-full h-80 md:h-100 rounded-xl overflow-hidden shadow-sm mb-6">
+                            <img src={FOTO_MANOS} alt="Anillos en las manos" className="w-full h-full object-cover" />
                         </div>
                     </section>
 
-
-                    {/* ================= 7. RECEPCIÓN Y UBICACIÓN ================= */}
-                    <section className="w-full px-4 md:px-10 my-2">
-                        <div className="relative papel-artesanal rounded-2xl p-5 md:p-7 text-center border border-[#d2dec3] shadow-sm flex flex-col items-center overflow-hidden">
-
-                            {/* Hojas decorativas */}
-                            <img src={HOJA_VERDE} alt="Deco" className="absolute -top-2 -right-2 w-12 opacity-60 rotate-[220deg] pointer-events-none scale-x-[-1]" />
-                            <img src={HOJA_VERDE} alt="Deco" className="absolute -bottom-2 -left-2 w-12 opacity-60 rotate-45 pointer-events-none" />
-
-                            {/* Ícono elegante: Dos copas de brindis */}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#a4b48c] mb-3 drop-shadow-sm relative z-10">
-                                <path d="M8 22a2 2 0 0 1-2-2v-1h4v1a2 2 0 0 1-2 2z" />
-                                <path d="M16 22a2 2 0 0 1-2-2v-1h4v1a2 2 0 0 1-2 2z" />
-                                <path d="M6 19h4" />
-                                <path d="M14 19h4" />
-                                <path d="M5 2v7a3 3 0 0 0 6 0V2" />
-                                <path d="M13 2v7a3 3 0 0 0 6 0V2" />
-                                <path d="M5 5h6" />
-                                <path d="M13 5h6" />
-                                <path d="M11 9c1 1 2 1 2 0" />
-                            </svg>
-
-                            <h4 className="font-sans-clean text-xs md:text-sm tracking-[0.2em] font-semibold text-[#1f3a1f] uppercase mb-1 relative z-10">
-                                RECEPCIÓN
-                            </h4>
-
-                            <p className="font-sans-clean text-[11px] md:text-xs tracking-wider text-[#2d402b] uppercase font-medium my-1 relative z-10">
-                                HACIENDA LOS ANGELES
-                            </p>
-
-                            <span className="font-sans-clean text-xs md:text-sm font-semibold text-[#1f3a1f] my-2 block relative z-10">
-                                8:30 P.M.
-                            </span>
-
-                            <a
-                                href="https://maps.app.goo.gl/Ksday6c6RRKWkCKJ9"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-3 inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#3d6335] text-[#3d6335] font-sans-clean text-xs tracking-widest uppercase font-semibold transition-all duration-300 hover:bg-[#3d6335] hover:text-white hover:shadow-md relative z-10"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                                Ver Ubicación
-                            </a>
-                        </div>
-                    </section>
-
-                    {/* ================= INICIO NUEVA SECCIÓN: VESTIMENTA E INFO ================= */}
-                    <section className="w-full px-4 md:px-10 my-6">
-                        <div className="relative w-full papel-artesanal rounded-3xl p-8 text-center border border-[#d2dec3] shadow-lg overflow-hidden">
-
-                            {/* Hojas decorativas en las esquinas */}
-                            <img src={HOJA_VERDE} alt="Deco" className="absolute -top-2 -left-2 w-16 opacity-70 rotate-45 pointer-events-none" />
-                            <img src={HOJA_VERDE} alt="Deco" className="absolute -bottom-2 -right-2 w-16 opacity-70 -rotate-135 pointer-events-none scale-x-[-1]" />
-
-                            <div className="relative z-10 space-y-8">
-
-                                {/* Bloque 1: Código de Vestimenta */}
-                                <div className="space-y-3">
-                                    {/* Ícono: Corbata / Traje Formal */}
-                                    <div className="flex justify-center mb-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#a4b48c] drop-shadow-sm">
-                                            <path d="M12 22V8" />
-                                            <path d="m7 10 5-8 5 8" />
-                                            <path d="m7 10 5 2 5-2" />
-                                        </svg>
-                                    </div>
-                                    <h4 className="font-serif-title text-xl md:text-2xl tracking-[0.1em] text-[#1f3a1f] uppercase">
-                                        Código de Vestimenta
-                                    </h4>
-                                    <div className="h-px w-24 bg-[#a4b48c] mx-auto"></div>
-                                    <p className="font-script text-4xl text-[#3d6335]">
-                                        Formal
-                                    </p>
-                                </div>
-
-                                {/* Bloque 2: Colores Reservados */}
-                                <div className="space-y-4">
-                                    {/* Ícono: Paleta / No permitido */}
-                                    <div className="flex justify-center mb-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#a4b48c] drop-shadow-sm">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="m4.9 4.9 14.2 14.2" />
-                                        </svg>
-                                    </div>
-                                    <p className="font-sans-clean text-xs md:text-sm tracking-widest text-[#2d402b] font-semibold uppercase">
-                                        Colores reservando no usar
-                                    </p>
-
-                                    {/* Círculos de colores con etiquetas */}
-                                    <div className="flex flex-wrap justify-center gap-6 md:gap-8 pt-2">
-                                        <div className="flex flex-col items-center gap-2">
-                                            <div className="w-12 h-12 rounded-full bg-white border border-stone-300 shadow-inner"></div>
-                                            <span className="font-sans-clean text-[10px] md:text-xs text-stone-700 font-medium">Blanco / Claros</span>
-                                        </div>
-                                        <div className="flex flex-col items-center gap-2">
-                                            <div className="w-12 h-12 rounded-full bg-[#004d3d] shadow-inner"></div>
-                                            <span className="font-sans-clean text-[10px] md:text-xs text-stone-700 font-medium">Verde Esmeralda</span>
-                                        </div>
-                                        <div className="flex flex-col items-center gap-2">
-                                            <div className="w-12 h-12 rounded-full bg-[#b19cd9] shadow-inner"></div>
-                                            <span className="font-sans-clean text-[10px] md:text-xs text-stone-700 font-medium">Lila</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Divisor elegante */}
-                                <div className="flex items-center justify-center gap-4 text-[#a4b48c]">
-                                    <div className="h-px w-full max-w-[100px] bg-current"></div>
-                                    <span className="text-xl">🕊️</span>
-                                    <div className="h-px w-full max-w-[100px] bg-current"></div>
-                                </div>
-
-                                {/* Bloque 3: Eventos y No Niños */}
-                                <div className="space-y-6 pt-2">
-
-                                    {/* Eventos con Íconos */}
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 justify-items-center font-serif-title text-sm md:text-base tracking-widest text-[#1f3a1f] uppercase font-medium mt-4">
-
-                                        {/* Civil */}
-                                        <div className="flex flex-col items-center gap-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-9 h-9 text-[#a4b48c] drop-shadow-sm">
-                                                <circle cx="9" cy="12" r="5"></circle>
-                                                <circle cx="15" cy="12" r="5"></circle>
-                                            </svg>
-                                            <span>Civil</span>
-                                        </div>
-
-                                        {/* Recepción */}
-                                        <div className="flex flex-col items-center gap-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-9 h-9 text-[#a4b48c] drop-shadow-sm">
-                                                <path d="M2 20h20"></path>
-                                                <path d="M5 20V10a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v10"></path>
-                                                <path d="M9 20v-5h6v5"></path>
-                                                <path d="M4 10l8-7 8 7"></path>
-                                            </svg>
-                                            <span>Recepción</span>
-                                        </div>
-
-                                        {/* Cena */}
-                                        <div className="flex flex-col items-center gap-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-9 h-9 text-[#a4b48c] drop-shadow-sm">
-                                                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
-                                                <path d="M7 2v20"></path>
-                                                <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
-                                            </svg>
-                                            <span>Cena</span>
-                                        </div>
-
-                                        {/* Brindis */}
-                                        <div className="flex flex-col items-center gap-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-9 h-9 text-[#a4b48c] drop-shadow-sm">
-                                                <path d="M12 15v7"></path>
-                                                <path d="M8 22h8"></path>
-                                                <path d="M12 15A6 6 0 0 0 18 9V2H6v7a6 6 0 0 0 6 6z"></path>
-                                                <path d="M6 5h12"></path>
-                                            </svg>
-                                            <span>Brindis</span>
-                                        </div>
-
-                                    </div>
-
-                                    {/* No Niños */}
-                                    <div className="space-y-3 pt-4 pb-2">
-                                        <h4 className="font-sans-clean text-sm md:text-base tracking-[0.15em] font-bold text-[#1f3a1f] uppercase">
-                                            No Niños
-                                        </h4>
-                                        <p className="font-sans-clean text-xs md:text-sm text-[#2d402b] leading-relaxed max-w-sm mx-auto">
-                                            Amamos a sus pequeños, pero queremos que en este día solo tengan que preocuparse por pasarla increíble.
-                                        </p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </section>
-                    {/* ================= FIN NUEVA SECCIÓN ================= */}
-
-                    {/* ================= MESA DE REGALOS ================= */}
                     <section className="w-full px-4 md:px-10 my-6">
                         <div className="relative w-full papel-artesanal rounded-3xl p-8 text-center border border-[#d2dec3] shadow-lg overflow-hidden">
 
@@ -450,68 +206,24 @@ export default function Canva() {
                             <img src={HOJA_VERDE} alt="Deco" className="absolute -bottom-2 -left-2 w-14 opacity-60 rotate-45 pointer-events-none" />
 
                             <div className="relative z-10 space-y-4">
-                                {/* Ícono de sobre */}
-                                <div className="flex justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#a4b48c]">
-                                        <rect width="20" height="16" x="2" y="4" rx="2" />
-                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                                    </svg>
-                                </div>
-
                                 <h4 className="font-serif-title text-xl md:text-2xl tracking-[0.1em] text-[#1f3a1f] uppercase">
-                                    Mesa de Regalos
+                                    Gracias
                                 </h4>
                                 <div className="h-px w-24 bg-[#a4b48c] mx-auto"></div>
 
                                 <p className="font-script text-3xl md:text-4xl text-[#3d6335] leading-snug">
-                                    Tu presencia es mi mejor regalo
+                                    Por ser parte de nuestro día
                                 </p>
 
-                                <p className="font-sans-clean text-xs md:text-sm text-[#2d402b] leading-relaxed max-w-xs mx-auto">
-                                    Si deseas tener el detalle con nosotros, habrá
-                                    <span className="font-semibold"> lluvia de sobres </span>
-                                    el día del evento.
+                                <p className="font-sans-clean text-xs md:text-sm text-[#2d402b] leading-relaxed max-w-sm mx-auto">
+                                    Gracias por acompañarnos, por cada abrazo, cada sonrisa y cada
+                                    momento compartido. Su presencia hizo de nuestra boda un día
+                                    inolvidable y lo guardaremos para siempre en nuestro corazón.
                                 </p>
                             </div>
                         </div>
                     </section>
-                    {/* ================= FIN MESA DE REGALOS ================= */}
 
-                    {/* ================= 8. FOTO MANOS Y REGRESIVA ================= */}
-                    <section className="w-full px-6 md:px-10 mt-4 flex flex-col items-center text-center">
-                        <div className="w-full h-80 md:h-100 rounded-xl overflow-hidden shadow-sm mb-6">
-                            <img src={FOTO_MANOS} alt="Anillos en las manos" className="w-full h-full object-cover" />
-                        </div>
-
-                        <p className="font-sans-clean text-xs md:text-sm text-[#2b5220] font-medium mb-3">
-                            Faltan
-                        </p>
-
-                        {/* Números del contador */}
-                        <div className="flex items-center justify-center gap-2 md:gap-3 text-[#22481b] font-serif-title my-1">
-                            <span className="text-3xl md:text-4xl font-medium">{timeLeft.dias}</span>
-                            <span className="text-xl md:text-2xl">:</span>
-                            <span className="text-3xl md:text-4xl font-medium">{String(timeLeft.horas).padStart(2, '0')}</span>
-                            <span className="text-xl md:text-2xl">:</span>
-                            <span className="text-3xl md:text-4xl font-medium">{String(timeLeft.minutos).padStart(2, '0')}</span>
-                            <span className="text-xl md:text-2xl">:</span>
-                            <span className="text-3xl md:text-4xl font-medium">{String(timeLeft.segundos).padStart(2, '0')}</span>
-                        </div>
-
-                        {/* Etiquetas del contador */}
-                        <div className="flex items-center justify-center gap-6 md:gap-8 text-[9px] md:text-[10px] font-sans-clean tracking-[0.2em] text-[#3d6335] uppercase font-semibold mt-1">
-                            <span>DÍAS</span>
-                            <span>HORAS</span>
-                            <span>MINUTOS</span>
-                            <span>SEGUNDOS</span>
-                        </div>
-                    </section>
-
-
-                    {/* ================= Confirmacion Asistencia ================= */}
-                    <ConfirmacionAsistencia />
-                    {/* ================= Hospedaje ================= */}
-                    <Hospedaje />
                     {/* ================= FOOTER ELEGANTE ================= */}
                     <div className="w-full flex justify-center px-4 md:px-10 mt-6 mb-8">
                         <div className="relative w-full max-w-2xl h-80 md:h-[400px] rounded-[2rem] overflow-hidden shadow-xl border-4 border-white group">
@@ -530,7 +242,7 @@ export default function Canva() {
                             <div className="absolute  top-25  left-2 w-full flex flex-col items-center text-center z-10 px-4">
                                 <p className="font-script text-5xl md:text-7xl text-[#2b4725] drop-shadow-sm">Lulu & Luis</p>
                                 <p className="font-sans-clean text-[10px] md:text-xs tracking-[0.25em] text-[#2b4725] uppercase font-bold mt-2">
-                                    ¡Te esperamos!
+                                    ¡Gracias por acompañarnos!
                                 </p>
                             </div>
                         </div>
