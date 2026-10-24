@@ -15,14 +15,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   // Reemplaza con tu dominio real de producción cuando lo despliegues
   metadataBase: new URL("https://lyl.soroner.com/"),
-  title: "Lulu & Luis | ¡Nos Casamos!",
-  description: "Acompáñanos a celebrar nuestra boda este 03 de Octubre de 2026.",
+  title: "Lulu & Luis | ¡Gracias!",
+  description: "Gracias por acompañarnos en nuestra boda el 03 de Octubre de 2026.",
   icons: {
     icon: "/favicon.png",
   },
   openGraph: {
-    title: "Lulu & Luis | ¡Nos Casamos!",
-    description: "Acompáñanos a celebrar nuestra boda este 03 de Octubre de 2026.",
+    title: "Lulu & Luis | ¡Gracias!",
+    description: "Gracias por acompañarnos en nuestra boda el 03 de Octubre de 2026.",
     url: "https://lyl.soroner.com/",
     siteName: "Boda Lulu & Luis",
     images: [
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lulu & Luis | ¡Nos Casamos!",
-    description: "Acompáñanos a celebrar nuestra boda este 03 de Octubre de 2026.",
+    title: "Lulu & Luis | ¡Gracias!",
+    description: "Gracias por acompañarnos en nuestra boda el 03 de Octubre de 2026.",
     images: ["/images/novios/novios-portada.jpeg"],
   },
 };

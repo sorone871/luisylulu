@@ -1,6 +1,5 @@
 'use client';
 
-import Countdown from '@/app/components/Countdown/Countdown';
 import { useState, useEffect, useRef } from 'react';
 
 // Declaración de tipos para la API de YouTube
@@ -89,7 +88,7 @@ const HeroDos = () => {
                 {/* Encabezado Superior */}
                 <div className="space-y-1 animate-fade-in">
                     <p className="uppercase tracking-[0.3em] text-[10px] text-stone-300 font-medium">
-                        Nos Casamos
+                        Recién Casados
                     </p>
                     <div className="w-8 h-[1px] bg-stone-300/40 mx-auto mt-2" />
                 </div>
@@ -104,10 +103,10 @@ const HeroDos = () => {
                         03 · Octubre · 2026
                     </p>
 
-                    {/* Contador estilizado */}
-                    <div className="mt-8 w-full">
-                        <Countdown />
-                    </div>
+                    {/* Mensaje de agradecimiento */}
+                    <p className="mt-8 font-serif italic font-light text-lg text-stone-100 drop-shadow-md">
+                        Gracias por acompañarnos en el día más especial de nuestras vidas
+                    </p>
                 </div>
 
                 {/* Flecha indicadora para deslizar */}
