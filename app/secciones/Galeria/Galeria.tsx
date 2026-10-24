@@ -1,5 +1,6 @@
 import GaleriaSlider from "@/app/components/GaleriaSlider/GaleriaSlider";
 import GaleriaGrid from "@/app/components/GaleriaGrid/GaleriaGrid";
+import { ALBUM_URL, fotosBoda } from "./fotosBoda";
 
 const Galeria = () => {
   const images = [
@@ -29,12 +30,22 @@ const Galeria = () => {
     <section className="w-full  flex flex-col items-center gap-8 md:gap-12 py-16 px-4 md:px-8 bg-[#FDFBF7]">
       <div className="w-full max-w-7xl flex flex-col justify-center items-center gap-8 md:gap-12">
         <h2 className="text-4xl md:text-5xl font-serif text-[#4A5D4E]">Galería</h2>
-        <GaleriaSlider images={images} />
+        {fotosBoda.length > 0 ? (
+          <GaleriaGrid images={fotosBoda} />
+        ) : (
+          <GaleriaSlider images={images} />
+        )}
 
-        {/*  <div className="w-full mt-12 md:mt-20">
-          <h3 className="text-3xl md:text-4xl font-serif text-[#4A5D4E] mb-8 text-center">Más Momentos</h3>
-          <GaleriaGrid images={gridImages} />
-        </div> */}
+        {ALBUM_URL && (
+          <a
+            href={ALBUM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 rounded-full border border-[#4A5D4E] text-[#4A5D4E] text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-[#4A5D4E] hover:text-white transition-colors"
+          >
+            Ver y descargar todas las fotos
+          </a>
+        )}
       </div>
     </section>
   );
