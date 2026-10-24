@@ -1,8 +1,24 @@
+"use client"
+import { useEffect, useState } from "react";
 import GaleriaSlider from "@/app/components/GaleriaSlider/GaleriaSlider";
 import GaleriaGrid from "@/app/components/GaleriaGrid/GaleriaGrid";
 import { ALBUM_URL, fotosBoda } from "./fotosBoda";
 
+type Foto = { thumb: string; full: string };
+
 const Galeria = () => {
+  const [fotosAlbum, setFotosAlbum] = useState<Foto[]>([]);
+
+  useEffect(() => {
+    if (fotosBoda.length > 0 || !ALBUM_URL) return;
+    fetch("/api/fotos")
+      .then((res) => res.json())
+      .then((data: { fotos: Foto[] }) => setFotosAlbum(data.fotos))
+      .catch(() => setFotosAlbum([]));
+  }, []);
+
+  const fotos = fotosBoda.length > 0 ? fotosBoda : fotosAlbum;
+
   const images = [
     "/images/novios/novios-1.avif",
     "/images/novios/novios-2.avif",
@@ -30,8 +46,8 @@ const Galeria = () => {
     <section className="w-full  flex flex-col items-center gap-8 md:gap-12 py-16 px-4 md:px-8 bg-[#FDFBF7]">
       <div className="w-full max-w-7xl flex flex-col justify-center items-center gap-8 md:gap-12">
         <h2 className="text-4xl md:text-5xl font-serif text-[#4A5D4E]">Galería</h2>
-        {fotosBoda.length > 0 ? (
-          <GaleriaGrid images={fotosBoda} />
+        {fotos.length > 0 ? (
+          <GaleriaGrid images={fotos} />
         ) : (
           <GaleriaSlider images={images} />
         )}

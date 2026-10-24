@@ -1,6 +1,8 @@
-// Enlace al álbum completo de la boda (Google Photos o Drive, compartido con "cualquiera con el enlace").
+// Pega aquí el enlace del álbum compartido de Google Photos
+// (ej. "https://photos.app.goo.gl/xxxx"). La galería toma las fotos de ahí
+// automáticamente y muestra el botón para ver y descargar el álbum completo.
 export const ALBUM_URL = "";
 
-// Selección de fotos de la boda que se muestran en el sitio.
+// Opcional: fotos guardadas en el repo. Si hay alguna, se muestran en lugar de las del álbum.
 // Se generan con `node scripts/optimizar-fotos.mjs` a partir de public/images/boda/originales/.
 export const fotosBoda: { thumb: string; full: string }[] = [];
